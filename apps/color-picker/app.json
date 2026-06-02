@@ -1,0 +1,8 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Color picker",
+  "created": "2026-05-13T01:23:08.897Z",
+  "assets": [],
+  "type": "app"
+}

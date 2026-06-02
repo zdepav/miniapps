@@ -1,0 +1,49 @@
+#ma-color-picker .module .slider
+  position: relative
+  margin: .75rem
+
+  div, input
+    position: absolute
+
+  .bar
+    border: 1px solid var(--color-base)
+    inset: .25rem
+    border-radius: .5rem
+
+    div
+      inset: 0 .375rem
+      border-radius: .5rem
+      background-repeat: no-repeat
+
+  input
+    -webkit-appearance: none
+    appearance: none
+    margin: 0
+    inset: .25rem 0
+    background: transparent
+    outline: none
+    cursor: pointer
+
+    @mixin thumb()
+      // for some reason does not work with "&::-webkit-slider-thumb, &::-moz-range-thumb"
+      width: 1.5rem
+      height: 1.5rem
+      box-sizing: border-box
+      border-radius: 50%
+      background: var(--knob-color)
+      border: 1px solid var(--color-base)
+
+    &::-webkit-slider-thumb
+      -webkit-appearance: none
+      appearance: none
+      @include thumb()
+
+    &::-moz-range-thumb
+      @include thumb()
+
+#ma-color-picker.slider-fadeout .module .slider
+  opacity: .5
+  transition: .1s opacity
+
+  &:hover
+    opacity: 1

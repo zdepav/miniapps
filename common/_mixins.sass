@@ -1,0 +1,18 @@
+@mixin noselect()
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $wrap: nowrap, $gap: 0)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+  flex-wrap: $wrap
+  gap: $gap
+
+@mixin flex-col($justify: flex-start, $align: flex-start, $wrap: nowrap, $gap: 0)
+  @include flex(column, $justify: $justify, $align: $align, $wrap: $wrap, $gap: $gap)

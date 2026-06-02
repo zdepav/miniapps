@@ -1,0 +1,10 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Gameee",
+  "created": "2026-05-07T12:00:20.235Z",
+  "assets": [
+    "music/teknoaxe/threshold-of-insanity.mp3"
+  ],
+  "type": "game"
+}

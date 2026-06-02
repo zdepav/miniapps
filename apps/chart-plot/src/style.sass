@@ -1,0 +1,107 @@
+@use '@common/mixins'
+
+
+$col-fg: var(--col-fg)
+$col-accent: #535d81
+$col-accent-bg: var(--col-accent-bg)
+$col-accent-bg-2: var(--col-accent-bg-2)
+$col-accent-fg: var(--col-accent-fg)
+$col-error: #d15f52
+
+#ma-chart-plot
+  --col-fg: #eee
+  --col-accent-bg: #3a3f51
+  --col-accent-bg-2: #2e3039
+  --col-accent-fg: #b7bfd0
+
+  background: inherit
+  margin: 0 auto
+  width: 100%
+  max-width: 40rem
+  font-family: sans-serif
+  padding: 1rem
+  @include mixins.flex-col($align: stretch, $gap: 1rem)
+
+  &.light-theme
+    --col-fg: #000
+    --col-accent-bg: #9098ae
+    --col-accent-bg-2: #b7bfd0
+    --col-accent-fg: #2e3039
+
+  .chart-form-row
+    @include mixins.flex($justify: center, $gap: 1rem)
+
+  input, button
+    background: inherit
+    outline: none !important
+    font-size: inherit
+    color: inherit
+
+  .chart-var
+    @include mixins.flex($align: center, $gap: 1rem)
+    border: 1px solid $col-accent
+    border-radius: .25rem
+    flex-grow: 1
+
+    &::before
+      content: attr(data-var)
+      font-weight: bold
+      display: block
+      padding: .25rem .5rem
+      color: $col-fg
+
+    label
+      border-left: 1px solid $col-accent
+      padding: .25rem .5rem
+      @include mixins.flex($align: baseline)
+      flex-grow: 1
+
+      span
+        margin-right: .5rem
+        color: $col-accent-fg
+
+      input
+        border: none
+        padding: .25rem
+        flex-grow: 1
+        width: 3rem
+
+        &:invalid
+          color: $col-error
+
+      &.number input
+        text-align: right
+
+      &.text input
+        text-align: left
+
+  .chart-btn
+    border: 1px solid $col-accent
+    border-radius: .25rem
+    padding: .5rem 2rem
+    text-align: center
+    background: $col-accent-bg-2
+    position: relative
+    cursor: pointer
+    font-weight: bold
+    flex: 1
+
+    &:active
+      top: 1px
+      background: $col-accent-bg
+
+    &.debug
+      border-style: dashed
+
+  math
+    border: 1px solid $col-accent
+    border-radius: .25rem
+    font-size: 2rem
+    padding: 1rem
+    overflow-x: auto
+    scrollbar-color: $col-accent transparent
+
+  .chart-area
+    border: 1px solid $col-accent
+    border-radius: .25rem
+    padding: .5rem

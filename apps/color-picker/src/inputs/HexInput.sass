@@ -1,0 +1,20 @@
+#ma-color-picker .module .hex
+  position: relative
+
+  input
+    position: absolute
+    appearance: none
+    border-radius: .25rem
+    color: inherit
+    inset: .5rem .25rem
+    padding: 0
+    text-align: center
+    font-size: 1rem
+    font-family: monospace
+    outline: none !important
+    background-color: var(--color-back)
+    border: 1px solid var(--color-base-tint-strong) !important
+    box-shadow: inset 0 .125rem var(--color-base-tint-half)
+
+    &:invalid
+      color: var(--color-red)

@@ -1,0 +1,60 @@
+@use "@common/mixins"
+
+#ma-datetime-table
+  table
+    border-collapse: collapse
+    margin-bottom: 2rem
+
+  tr
+    &.category-start
+      border-top: 1px solid var(--color-base-tint-half)
+
+    @mixin category($title, $color)
+      &[data-category=#{$title}] td
+        &.title, &.example
+          color: $color
+
+    @include category('Date', var(--color-red))
+    @include category('Time', var(--color-yellow))
+    @include category('Timezone', var(--color-green))
+    @include category('Escaping', var(--color-blue))
+
+  tbody > tr
+    &:hover
+      background-color: var(--color-base-tint-half)
+
+    &:last-child
+      border-bottom: 1px solid var(--color-base-tint-half)
+
+  th, td
+    &:not(:last-child)
+      border-right: 1px solid var(--color-base-tint)
+
+  th
+    padding: .25rem .5rem
+    text-align: center
+    vertical-align: top
+    @include mixins.noselect()
+
+    .subtitle
+      font-size: .8rem
+      color: var(--color-base-tint-strong)
+
+  td
+    padding: .125rem .5rem
+
+    &.title
+      @include mixins.noselect()
+
+    &.example
+      font-style: italic
+
+    &.example, &.code, &.link
+      text-align: center
+
+    &.link svg
+      color: var(--color-base-tint-strong)
+      height: 2rem
+
+      &:hover
+        color: var(--color-base)

@@ -1,0 +1,31 @@
+{
+  "author": {
+    "name": "Zdeněk Pavlátka",
+    "email": "zdenek.pavlatka@zdepav.cz",
+    "url": "https://zdepav.cz"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^25.0.6",
+    "css-loader": "^7.1.3",
+    "highlight.js": "^11.11.1",
+    "luxon": "^3.7.2",
+    "sass": "^1.97.3",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.104.1"
+  },
+  "license": "BSD 3-Clause",
+  "name": "2d3-miniapps",
+  "private": true,
+  "scripts": {
+    "add": "node scripts/add.js",
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js",
+    "list": "node scripts/list.js",
+    "postinstall": "tsc -p scripts"
+  },
+  "type": "module"
+}

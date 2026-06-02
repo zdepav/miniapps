@@ -1,0 +1,27 @@
+@use '@/mixins'
+
+#ma-color-picker .module .button
+  border-radius: .25rem
+  margin: .375rem .25rem .625rem
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  font-size: 1rem !important
+  background-color: var(--color-back)
+  border: 1px solid var(--color-base-tint-strong)
+  box-shadow: 0 .25rem var(--color-base-tint-half)
+  font-weight: bold
+  @include mixins.noselect()
+
+  &.disabled
+    opacity: .5
+
+  &:not(.disabled)
+    cursor: pointer
+
+    &:active
+      position: relative
+      top: .125rem
+      box-shadow: 0 .125rem var(--color-base-tint-half)

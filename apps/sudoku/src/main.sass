@@ -1,0 +1,119 @@
+@use "@common/mixins" as commons
+@use "@/mixins"
+@use "@/theme"
+@use "@/KillerSudoku"
+@use "@/SandwichSudoku"
+@use "@/XSumsSudoku"
+
+
+#ma-sudoku
+  @include commons.noselect()
+
+  .hsep
+    margin: .5rem 0 1.5rem
+    @include mixins.border(bottom)
+
+  .header
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 1.25rem
+    font-weight: bold
+    text-align: center
+
+  .row
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .input-area
+    margin-right: 1.5rem
+
+  .table
+    display: flex
+    flex-wrap: nowrap
+    margin: 1rem 0
+
+    .column, .btn, .textbox
+      width: 2.5rem
+      box-sizing: border-box
+
+    .btn, .textbox, .textbox input
+      height: 2.5rem
+      font-size: 1.5rem
+      line-height: 2.5rem
+      text-align: center
+
+    .btn
+      width: 2.5rem
+      cursor: pointer
+      font-weight: bold
+
+    .textbox
+      width: 2.5rem
+      position: relative
+
+      input
+        background: none !important
+        border: none !important
+        outline: none !important
+        color: var(--color-base)
+        @include mixins.fill-parent()
+        width: inherit !important
+
+    .column
+      &.caption
+        width: 7.5rem
+
+        & > div
+          padding-right: .5rem
+          font-weight: initial
+          font-size: initial
+          text-align: right
+
+      &:not(:last-child)
+        @include mixins.border(right)
+
+      & > div, & > label
+        display: block
+        position: relative
+        text-align: center
+        box-sizing: border-box
+        height: 2.5rem
+        font-size: 1.5rem
+        line-height: 2.5rem
+        font-weight: bold
+
+        &:first-child:not(:last-child)
+          color: var(--color-green)
+
+        &:last-child:not(:first-child)
+          color: var(--color-red)
+
+        &:not(:last-child)
+          @include mixins.border(bottom)
+
+        input
+          display: none
+
+          & + span
+            cursor: pointer
+            display: block
+            @include mixins.fill-parent()
+
+          &:not(:checked) + span
+            color: var(--color-base-tint)
+
+  .results > div
+    font-size: 1.25rem
+    line-height: 2.25rem
+    text-align: center
+    width: 10rem
+    height: 2.25rem
+
+    &:not(:last-child)
+      @include mixins.border(bottom)
+
+    &.disabled
+      color: var(--color-base-tint)
+      text-decoration: line-through

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../app.schema.json",
+  "name": "ASCII Table",
+  "created": "2026-05-15T15:40:01.634Z",
+  "authors": [
+    "Zdeněk Pavlátka"
+  ],
+  "assets": [],
+  "type": "app"
+}

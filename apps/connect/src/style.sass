@@ -1,0 +1,166 @@
+@use "@common/mixins"
+
+$color-frame: #307854
+$color-tile: #205038
+$color-title: #10281C
+
+$color-line: #FFE080
+$color-line-win: #80FFFF
+
+#ma-game-tile-connect
+
+  .start-button-container
+    margin: 0 auto
+    width: 40.75rem
+    height: 6.75rem
+    background: $color-frame
+    border-radius: .75rem
+
+    .start-button
+      display: inline-block
+      margin: .375rem
+      width: 40rem
+      height: 6rem
+      font-size: 2.5rem
+      font-weight: bold
+      line-height: 6rem
+      text-align: center
+      background: $color-tile
+      color: $color-line
+      border-radius: .5rem
+      cursor: pointer
+      @include mixins.noselect()
+      transition: box-shadow 0.15s, text-shadow 0.15s
+
+    &:hover .start-button
+      text-shadow: 0 0 .625rem $color-line
+      box-shadow: 0 0 .375rem .25rem $color-tile
+
+  table.tiles
+    margin: 0 auto
+    background: $color-frame
+    border: .25rem solid $color-frame
+    border-radius: .5rem
+
+    th, td, tr
+      padding: 0
+      margin: 0
+
+  table.scores
+    margin: 0 auto
+    width: 25.5rem
+    background-color: $color-frame
+    color: $color-line
+    font-size: 1.25rem
+    border-radius: 0 0 .5rem .5rem
+
+    td, th
+      text-align: center
+      border-bottom: 1px solid $color-frame
+      min-width: 4rem
+
+    thead tr:first-child
+      color: $color-line-win
+
+  .fullRow
+    height: 3.5rem
+    margin: .1875rem
+    border-radius: .5rem
+    background: $color-tile
+    text-align: center
+    line-height: 3.5rem
+    font-size: 2.5rem
+    font-family: monospace
+    color: $color-line
+    @include mixins.noselect()
+
+  .level-name
+    font-size: 1.75rem
+    font-weight: bold
+    color: $color-title
+    text-align: center
+
+  .tile
+    width: 6rem
+    height: 6rem
+    overflow: hidden
+    margin: .1875rem
+    position: relative
+    cursor: pointer
+    border-radius: .5rem
+    background: $color-tile
+    transition: box-shadow 0.15s, transform 0.25s
+    box-shadow: 0 0 0 0 $color-tile
+
+    &:hover
+      box-shadow: 0 0 .5rem .25rem $color-tile
+
+    &.c div
+      background: $color-line
+      border-radius: .5rem
+      transition: box-shadow 0.15s
+
+    &.c:hover div
+      box-shadow: 0 0 .625rem $color-line
+
+    @mixin rect($x, $y, $w, $h)
+      left: $x
+      top: $y
+      width: $w
+      height: $h
+
+    div
+      position: absolute
+      @include rect(2.5rem, 2.5rem, 1rem, 1rem)
+
+      &::before, &::after
+        content: ""
+        position: absolute
+        background: $color-line
+        transition: box-shadow 0.15s
+        box-shadow: 0 0 0 $color-line
+
+    &:hover div::before, &:hover div::after
+        box-shadow: 0 0 .625rem $color-line
+
+    &.u div::before
+      @include rect(.25rem, -3.25rem, .5rem, 4rem)
+
+    &.d div::before
+      @include rect(.25rem, .25rem, .5rem, 4rem)
+
+    &.r div::after
+      @include rect(.25rem, .25rem, 4rem, .5rem)
+
+    &.l div::after
+      @include rect(-3.25rem, .25rem, 4rem, .5rem)
+
+    &.u.d div::before
+      @include rect(.25rem, -3.25rem, .5rem, 8rem)
+
+    &.r.l div::after
+      @include rect(-3.25rem, .25rem, 8rem, .5rem)
+
+  .retry:not(.retryButton)
+    font-size: 1.5rem
+    &::after
+      content: "Connect all lines!"
+
+  .won
+    .fullRow
+      color: $color-line-win
+
+    .retryButton
+      transition: box-shadow 0.15s, text-shadow 0.15s
+      cursor: pointer
+
+      &:hover
+        text-shadow: 0 0 .625rem $color-line-win
+        box-shadow: 0 0 .5rem .25rem $color-tile
+
+    .tile
+      &.c:hover div, div::before, div::after, &:hover, &:hover div::before, &:hover div::after
+        box-shadow: none
+
+      &.c div, div::before, div::after
+        background: $color-line-win

@@ -1,0 +1,13 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Smoker",
+  "created": "2026-05-07T12:00:20.436Z",
+  "assets": [
+    "img/smoker-cigarette.png",
+    "img/smoker-cigarette-burned.png",
+    "img/smoker-flame.png",
+    "img/smoker-smoke.png"
+  ],
+  "type": "game"
+}

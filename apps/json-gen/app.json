@@ -1,0 +1,8 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Random JSON generator",
+  "created": "2026-01-29T17:06:05.119Z",
+  "assets": [],
+  "type": "app"
+}

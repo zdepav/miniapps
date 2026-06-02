@@ -1,0 +1,8 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Palette editor",
+  "created": "2026-02-06T20:55:02.576Z",
+  "assets": [],
+  "type": "app"
+}

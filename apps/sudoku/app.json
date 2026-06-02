@@ -1,0 +1,10 @@
+{
+  "$schema": "../../app.schema.json",
+  "name": "Variant sudoku utilities",
+  "created": "2026-05-15T16:30:06.971Z",
+  "authors": [
+    "Zdeněk Pavlátka"
+  ],
+  "assets": [],
+  "type": "app"
+}

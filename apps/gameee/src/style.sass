@@ -1,0 +1,19 @@
+@use "@common/mixins"
+
+#ma-game-gameee
+  display: flex
+  justify-content: center
+
+  div, canvas
+    width: 800px
+    height: 400px
+    outline: 1px solid #000
+
+  div
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #404040
+    color: #83af70
+    font-size: 2rem
+    @include mixins.noselect()

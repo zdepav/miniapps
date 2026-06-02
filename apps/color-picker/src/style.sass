@@ -1,0 +1,35 @@
+@use '@/blocks'
+@use '@/inputs'
+@use '@/theme'
+
+#ma-color-picker
+  padding: .5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: stretch
+
+  .module
+    background-color: var(--color-base-tint-quarter)
+    border: .125rem solid var(--color-base-tint-strong) !important
+    box-shadow: 0 .25rem 0 var(--color-base-tint-half)
+    border-radius: .5rem
+    padding: .875rem
+    margin: .5rem
+    display: flex
+    justify-content: center
+    align-items: center
+
+    > .grid
+      display: grid
+      padding: 0
+      margin: 0
+
+  &.debug .module
+    $g1: repeating-linear-gradient(to right, #0002 0, #0002 3rem, #fff2 3rem, #fff2 6rem, #0002 6rem)
+    $g2: repeating-linear-gradient(to bottom, #0002 0, #0002 3rem, #fff2 3rem, #fff2 6rem, #0002 6rem)
+    background: $g1 .875rem .875rem, $g2 .875rem .875rem
+    background-clip: content-box
+
+#ma-color-picker.no-config #ma-color-picker-config
+  display: none

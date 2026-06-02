@@ -1,0 +1,8 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Tile Connect",
+  "created": "2026-05-07T12:00:20.401Z",
+  "assets": [],
+  "type": "game"
+}

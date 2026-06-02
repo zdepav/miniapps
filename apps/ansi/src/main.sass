@@ -1,0 +1,180 @@
+@use "@common/mixins"
+@use "@/theme"
+
+$border-default: 1px solid var(--color-base-tint)
+
+#ma-ansi
+  font-size: .875rem
+
+  .columns
+    display: flex
+    flex-wrap: wrap
+    max-width: 80rem
+    margin: 0 auto
+
+  .column
+    flex-grow: 1
+    margin: 0 .5rem
+
+  .switchable-code
+    padding: .375rem .5rem
+    border: $border-default
+    border-radius: .25rem
+    font-family: 'JetBrains Mono', monospace
+    color: var(--color-base-tint-strong)
+    line-height: 1.2em
+
+    .esc
+      color: var(--color-base)
+
+    .arg
+      color: var(--color-red)
+
+    .comment
+      color: var(--color-green)
+
+  .desc
+    margin: .25rem 0 1rem 1.5rem
+    padding: .25rem .375rem
+    border-radius: .375rem
+    border-left: .25rem solid var(--color-base-tint)
+    position: relative
+
+    &::before
+      position: absolute
+      content: ''
+      width: .625rem
+      height: calc(50% + .25rem)
+      top: -.25rem
+      left: -.75rem
+      border-left: $border-default
+      border-bottom: $border-default
+      border-bottom-left-radius: .25rem
+
+    .arg
+      font-family: 'JetBrains Mono', monospace
+      font-size: .8125rem
+      color: var(--color-red)
+
+  h1, h2, h3
+    text-align: center
+    margin: 1rem 0 0
+    line-height: 2.5rem
+
+  .table
+    margin: 0 auto
+    border: $border-default
+    border-radius: .25rem
+    line-height: 2em
+
+    .row, .col
+      padding: 0
+      margin: 0
+
+    .row
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+
+      &:not(:last-child)
+        border-bottom: $border-default
+
+    .col
+      code, span
+        display: inline-block
+        padding: 0 .25rem
+
+      code
+        color: var(--color-green)
+        border-right: $border-default
+
+        &.neg
+          color: var(--color-red)
+
+      @each $n in 2, 3
+        &.span-#{$n}
+          grid-column: span $n
+
+    .col:last-child span
+        padding-right: 1rem
+
+  .center
+    text-align: center
+
+  .palette
+    color: #000
+    margin: 0 auto 2rem
+    max-width: 67.5rem
+    font-size: .75rem
+    line-height: 1.25rem
+
+    .row
+      display: grid
+      grid-template-columns: repeat(36, 1fr)
+      padding: 1px
+      gap: 2px
+
+      .cell
+        text-align: center
+
+      &.basic
+        grid-template-columns: repeat(16, 1fr)
+
+      &.gs
+        grid-template-columns: repeat(24, 1fr)
+
+  .select
+    position: relative
+    margin-bottom: 1rem
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: bold
+    flex-wrap: wrap
+    gap: .25rem
+
+    &::before
+      left: 0
+      top: 0
+      bottom: 0
+      display: flex
+      align-items: center
+      position: absolute
+
+    label
+      min-width: 6rem
+      display: block
+      @include mixins.noselect()
+
+      span
+        box-sizing: border-box
+        display: block
+        padding: .25rem .5rem
+        min-width: 6rem
+        font-family: 'JetBrains Mono', monospace
+        color: var(--color-base-tint-strong)
+        border: 1px solid var(--color-base-tint-strong)
+        text-align: center
+        border-radius: .375rem
+
+      input
+        display: none
+
+      input:checked ~ span
+        color: var(--color-base)
+        background-color: var(--color-base-tint)
+
+      input:not(:checked) ~ span
+        cursor: pointer
+        &:hover
+          background-color: var(--color-base-tint-half)
+
+  a
+    color: var(--color-blue)
+
+  .hidden
+    display: none !important
+
+  .note
+    margin-top: .5rem
+    font-size: 1rem
+    color: var(--color-base-tint-strong)

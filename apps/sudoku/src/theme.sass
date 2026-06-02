@@ -1,0 +1,15 @@
+@use "sass:color"
+
+#ma-sudoku:not(.light-theme)
+  --color-base: hsl(40, 5%, 80%)
+  --color-base-tint: hsl(40, 5%, 35%)
+  --color-red: hsl(10, 40%, 55%)
+  --color-green: hsl(114, 40%, 55%)
+  --color-green-tint: #{color.mix(hsl(114, 40%, 55%), hsl(40, 5%, 12%), 33%)}
+
+#ma-sudoku.light-theme
+  --color-base: hsl(40, 5%, 20%)
+  --color-base-tint: hsl(40, 5%, 73%)
+  --color-red: hsl(10, 50%, 40%)
+  --color-green: hsl(114, 50%, 40%)
+  --color-green-tint: #{color.mix(hsl(114, 50%, 40%), hsl(40, 5%, 88%), 33%)}

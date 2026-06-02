@@ -1,0 +1,23 @@
+@use 'sass:color'
+
+#ma-color-picker:not(.light-theme)
+  --color-base: hsl(40, 5%, 80%)
+  --color-back: hsl(40, 5%, 12%)
+  --color-base-tint-quarter: hsl(40, 5%, 18%)
+  --color-base-tint-half: hsl(40, 5%, 23%)
+  --color-base-tint-strong: hsl(40, 5%, 57%)
+  --color-red: hsl(10, 40%, 55%)
+  --color-red-tint: #{color.mix(hsl(10, 40%, 55%), hsl(40, 5%, 12%), 33%)}
+  --color-green: hsl(114, 40%, 55%)
+  --color-green-tint: #{color.mix(hsl(114, 40%, 55%), hsl(40, 5%, 12%), 33%)}
+
+#ma-color-picker.light-theme
+  --color-base: hsl(40, 5%, 20%)
+  --color-back: white
+  --color-base-tint-quarter: hsl(40, 5%, 90%)
+  --color-base-tint-half: hsl(40, 5%, 80%)
+  --color-base-tint-strong: hsl(40, 5%, 50%)
+  --color-red: hsl(10, 50%, 45%)
+  --color-red-tint: #{color.mix(hsl(10, 50%, 45%), hsl(40, 5%, 88%), 33%)}
+  --color-green: hsl(114, 50%, 45%)
+  --color-green-tint: #{color.mix(hsl(114, 50%, 45%), hsl(40, 5%, 88%), 33%)}

@@ -1,0 +1,17 @@
+@use 'sass:color'
+
+#ma-ascii-table:not(.light-theme)
+  --color-base: hsl(40, 5%, 80%)
+  --color-base-tint-half: hsl(40, 5%, 23%)
+  --color-base-tint: hsl(40, 5%, 35%)
+  --color-green: hsl(114, 40%, 55%)
+  --color-blue: hsl(210, 40%, 55%)
+  --color-blue-tint: #{color.mix(hsl(210, 40%, 55%), hsl(40, 5%, 12%), 33%)}
+
+#ma-ascii-table.light-theme
+  --color-base: hsl(40, 5%, 20%)
+  --color-base-tint-half: hsl(40, 5%, 80%)
+  --color-base-tint: hsl(40, 5%, 73%)
+  --color-green: hsl(114, 50%, 33%)
+  --color-blue: hsl(210, 50%, 33%)
+  --color-blue-tint: #{color.mix(hsl(210, 50%, 33%), hsl(40, 5%, 88%), 33%)}

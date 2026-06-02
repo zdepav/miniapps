@@ -1,0 +1,196 @@
+@use '@common/mixins'
+
+#ma-theme-edit
+  background-color: #222
+  color: #eee
+  font-family: sans-serif
+  padding: 1rem
+  @include mixins.flex($justify: center, $align: flex-start, $gap: 1rem, $wrap: wrap)
+
+  .column
+    width: 100%
+    max-width: 40rem
+    @include mixins.flex-col($align: stretch)
+
+  .inputs
+    display: grid
+    gap: 1rem
+    grid-template-columns: 1fr 1fr 1fr 1fr
+
+  [data-label]
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+    &::before
+      content: attr(data-label)
+      display: block
+      font-size: .9rem
+      padding: 0 0 .125rem .25rem
+      color: #ace
+
+    > :last-child
+      border: 1px solid #8ac
+      border-radius: .25rem
+
+    > input, > select, > button
+      background-color: inherit
+      outline: none !important
+      font-size: 1rem
+      color: inherit
+      padding: .5rem
+      box-sizing: border-box
+      width: 100%
+
+    > button
+      background-color: #8ac3
+      cursor: pointer
+
+      &:active
+        position: relative
+        top: 1px
+        background-color: #8ac6
+
+    > input
+      font-family: monospace
+
+      &:invalid
+        color: #e88
+
+      &.number
+        text-align: right
+
+    > select option
+      background-color: #222
+      color: #eee
+
+  #stylesheet-container
+    position: relative
+    min-height: 3rem
+
+  .icon-btn
+    position: absolute
+    color: #8ac
+    top: .5rem
+    cursor: pointer
+
+    &:hover
+      color: #ace
+
+    &:active
+      top: calc(.5rem + 1px)
+
+    svg
+      width: 1.5rem
+      height: 1.5rem
+
+  #stylesheet-select
+    right: .5rem
+
+  pre
+    padding: .5rem
+    border-radius: .25rem
+    margin: 0
+
+    .color
+      position: relative
+      padding-left: 1rem
+      color: #cc8
+
+      &::before
+        content: ''
+        position: absolute
+        display: block
+        border-width: 1px
+        border-style: solid
+        border-color: #444 #000 #000 #444
+        border-radius: .125rem
+        background-color: var(--color)
+        box-sizing: border-box
+        top: .125rem
+        left: 0
+        width: .75rem
+        height: .75rem
+
+    .selector
+      color: #67c
+
+    .comment
+      color: #888
+
+    .prop
+      color: #8ac
+
+    .val
+      color: #cc8
+
+    .kw
+      color: #c98
+
+#ma-theme-edit-example
+  padding: 1rem 2rem
+  background-color: var(--ex-color-bg)
+  color: var(--ex-color-fg)
+
+  h1
+    text-align: center
+    font-size: 3rem
+    margin: 0
+    line-height: 1.5em
+    color: var(--ex-color-accent-fg)
+
+  p
+    text-align: justify
+
+  .flow
+    display: flex
+    gap: 1rem
+    justify-content: center
+
+  .tag, button
+    border-width: 1px
+    border-style: solid
+    border-radius: .25rem
+    padding: .5rem 1rem
+
+  .tag
+    cursor: default
+    @include mixins.noselect()
+
+  @mixin tag($type)
+    .#{$type}
+      background-color: var(--ex-color-#{$type}-bg)
+      border-color: var(--ex-color-#{$type})
+      color: var(--ex-color-#{$type}-fg)
+
+  @include tag(ok)
+  @include tag(warn)
+  @include tag(err)
+
+  blockquote
+    border-left: .25rem solid var(--ex-color-accent)
+    color: var(--ex-color-accent-fg-2)
+    padding: .25rem 0 .25rem .75rem
+    margin-left: .5rem
+    font-style: italic
+
+  button
+    position: relative
+    background-color: var(--ex-color-accent-bg)
+    border-color: var(--ex-color-accent)
+    cursor: pointer
+    font-weight: bold
+    font-size: 1rem
+    padding: .5rem 4rem
+    color: var(--ex-color-fg)
+
+    &:active
+      top: 1px
+      background-color: var(--ex-color-accent-bg-2)
+
+  a, a:visited
+    color: var(--ex-color-accent-fg)
+    text-decoration: underline
+
+    &:hover
+      color: var(--ex-color-accent)

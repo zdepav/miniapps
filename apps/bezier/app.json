@@ -1,0 +1,8 @@
+{
+  "$schema": "../../app.schema.json",
+  "authors": ["Zdeněk Pavlátka"],
+  "name": "Bézier curve visualizer",
+  "created": "2026-05-07T11:57:21.686Z",
+  "assets": [],
+  "type": "app"
+}

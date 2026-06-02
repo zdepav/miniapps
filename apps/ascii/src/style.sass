@@ -1,0 +1,66 @@
+@use "@/theme"
+
+#ma-ascii-table
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+
+  table
+    font-family: 'JetBrains Mono', monospace
+    font-size: 12px
+    border-collapse: collapse
+    margin: 0 0 16px
+
+  td, th
+    &:not(.desc)
+      border-right: 1px solid var(--color-base-tint)
+
+  th
+    padding: 1px 4px 3px
+    text-align: center
+    border-bottom: 1px solid var(--color-base-tint)
+
+    &.desc
+      font-family: sans-serif
+
+    &.desc, &.left
+      text-align: left
+
+  td
+    padding: 1px 4px
+    text-align: right
+
+    &.char
+      text-align: center
+
+    &.i
+      color: var(--color-green)
+
+    &.esc
+      color: var(--color-blue)
+      text-align: left
+
+    &.esc.soft
+      color: var(--color-blue-tint)
+
+    &.soft
+      color: var(--color-base-tint)
+
+    &.desc
+      font-family: sans-serif
+      text-align: left
+      padding-right: 16px
+
+  tr
+    &:hover
+      background-color: var(--color-base-tint-half)
+
+      td.soft
+        color: var(--color-base)
+  
+      td.esc.soft
+        color: var(--color-blue)
+
+    &:first-child > td
+      padding-top: 3px

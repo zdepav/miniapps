@@ -1,0 +1,10 @@
+{
+  "$schema": "../../app.schema.json",
+  "name": "Rolling circles",
+  "created": "2026-05-25T02:39:58.530Z",
+  "authors": [
+    "Zdeněk Pavlátka"
+  ],
+  "assets": [],
+  "type": "app"
+}

@@ -1,0 +1,18 @@
+@use "@/mixins"
+
+#ma-sudoku-sandwich > .header
+  div, &::before, &::after
+    display: block
+    height: 3rem
+    min-width: 1rem
+    line-height: 3rem
+    padding: 0 1rem
+    @include mixins.border(top bottom)
+
+  &::before
+    content: '1'
+    @include mixins.border(right, dashed)
+
+  &::after
+    content: '9'
+    @include mixins.border(left, dashed)
