@@ -130,7 +130,7 @@ export default class ProjectInfo {
                 extensions: ['.ts'],
                 alias: {
                     '@': src,
-                    '@common': path.join(ROOTD, 'common')
+                    '@ma': path.join(ROOTD, 'common')
                 }
             },
             module: {
