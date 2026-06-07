@@ -1,5 +1,5 @@
 import MiniApp from "@ma/MiniApp";
-import "style.sass";
+import "@/style.sass";
 
 const app: MiniApp = new MiniApp("{{PROJECT_ID}}", {
     themed: true,
